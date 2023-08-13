@@ -1,0 +1,12 @@
+• a description of all files you are turning in (especially if there are extra PHP files),
+    • 1. Index.html - The main
+    • 2. index.php - The main php file
+    • 3. style.css - The main css file
+
+
+• a description of how much of the project is complete, including extra credit
+    • The entire project is complete using myphpadmin, php, and mysql
+
+
+• a description of any known bugs in the program
+    • There are no known bugs in the program
