@@ -10,3 +10,14 @@
 
 • a description of any known bugs in the program
     • There are no known bugs in the program
+
+
+
+    code: 
+        $ToUpdateCount = $_GET["incrementcount"];
+    $selectQuery = "SELECT count From user WHERE username = ?";
+    $stmt = $conn->prepare($selectQuery);
+    $stmt->bind_param("i", $ToUpdateCount);
+    $stmt->execute();
+    $res = $stmt->get_result(); //get result of query
+    $numcount = mysqli_num_rows($res); //OOP or reg function synatx usable
