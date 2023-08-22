@@ -57,7 +57,6 @@ if (mysqli_connect_error()) {
     $res = $stmt->get_result(); //get result of query
     $numresults = mysqli_num_rows($res); //OOP or reg function synatx usable
 
-
     //check if user already taken
     if ($numresults > 0) { //if user already taken "elon is in there"
         echo ("Someone already has that username " . $toInsertUsername);
@@ -91,45 +90,19 @@ if (mysqli_connect_error()) {
         // Here I output data of row
         header("Location: mainpage.php");
         //trying to get count for unique identifier (userid)
-        echo "Current Count: " . $_SESSION['count'] . "<br>";
         //count statement is done
         $stmt->close();
-
-
+        // Now we select the count for the userid that is logged in
         $selectQuery = "SELECT count FROM user WHERE userid = ?";
         $selectStmt = $conn->prepare($selectQuery);
-        $selectStmt->bind_param("i", $userId);
-
-        // Execute the SELECT statement
+        $selectStmt->bind_param("i", $userId);  //time for integer 
         $selectStmt->execute();
-
-        // Bind the result variable
-        $selectStmt->bind_result($updatedCount);
-
-        // Fetch the result
+        $selectStmt->bind_result($updatedCount);    //bind result to variable
         $selectStmt->fetch();
-
-        // Close the SELECT statement
         $selectStmt->close();
-
-        // Store the updated count in a session variable
         $_SESSION['countTracker'] = $updatedCount;
-
-
-
-
-
-
-
-
-
-
-
-
-
         // Update the session count
         //$_SESSION['count'] = $_SESSION['count'] + 1;
     }
-
     $conn->close();
 }
