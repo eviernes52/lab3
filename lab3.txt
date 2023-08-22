@@ -1,23 +1,16 @@
 • a description of all files you are turning in (especially if there are extra PHP files),
-    • 1. Index.html - The main
-    • 2. index.php - The main php file
-    • 3. style.css - The main css file
+    • 1. lab3.html - Simply just my form
+    • 2. mainpage.php - The page users see when loggedin contains increment button and current count as well as logout
+    • 3. dbconnect.php - Connects to the database and selects the database has all the if statements for the form
 
 
 • a description of how much of the project is complete, including extra credit
-    • The entire project is complete using myphpadmin, php, and mysql
+    • The entire project is complete using myphpadmin, php, and mysql (going for the 40% + 60% no extra credit)
 
 
 • a description of any known bugs in the program
-    • There are no known bugs in the program
+    • There are no known bugs in the program if fixed the two issues we talked about
+      Fixes: 
+    1) (line 60) put the floating php inside an if statement
+    2) Used count at login portion to get the current count instantly when a user logs in (line 37)
 
-
-
-    code: 
-        $ToUpdateCount = $_GET["incrementcount"];
-    $selectQuery = "SELECT count From user WHERE username = ?";
-    $stmt = $conn->prepare($selectQuery);
-    $stmt->bind_param("i", $ToUpdateCount);
-    $stmt->execute();
-    $res = $stmt->get_result(); //get result of query
-    $numcount = mysqli_num_rows($res); //OOP or reg function synatx usable
