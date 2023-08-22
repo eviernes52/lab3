@@ -82,7 +82,7 @@ if (mysqli_connect_error()) {
         $stmtSelect->close();
 
         // Now we update count for the userid that is logged in
-        $updateQuery = "UPDATE user SET count = count + 1 WHERE userid = ?";
+        $updateQuery = "UPDATE user SET count = count + 1 WHERE userid = ?";    // UPDATE COUNT where userid = logged in essentially any userid all unique
         $stmt = $conn->prepare($updateQuery);
         $stmt->bind_param("i", $userId);
         // Execute the prepared statement
@@ -100,9 +100,8 @@ if (mysqli_connect_error()) {
         $selectStmt->bind_result($updatedCount);    //bind result to variable
         $selectStmt->fetch();
         $selectStmt->close();
-        $_SESSION['countTracker'] = $updatedCount;
+        $_SESSION['countTracker'] = $updatedCount;  //set session variable to updated count "countTracker"
         // Update the session count
-        //$_SESSION['count'] = $_SESSION['count'] + 1;
     }
     $conn->close();
 }
