@@ -4,25 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Lab 3 Login & Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .form-container {
+            margin: 0 auto;
+            width: 400px;
+            padding: 3em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+            margin-bottom: 20px; /* Increase the margin between forms */
+        }
+
+        .form-container h3 {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 0.1em;
+            text-align: center;
+        }
+        
+        .form-container button {
+            display: block;
+            margin: 0 auto;
+            margin-top: 1em;
+        }
+
+    </style>
 </head>
 
 <body>
-    <form name = "Register" method="post" action="dbconnect.php">
+    <form class="form-container" name="Register" method="post" action="dbconnect.php">
         <h3>Register An Account</h3>
-        <label>Username: <input type="text" name="username"><br></label><br>
 
-        <label>Password: <input type="text" name="password"><br></label><br>
+        <label>Username: <input type="text" name="username"></label><br><br>
+        <label>Confirm Password: <input type="text" name="confirmPassword"></label><br><br>
+        <label>Password: <input type="text" name="password"></label><br><br>
+        <label>First Name: <input type="text" name="firstName"></label><br><br>
+        <label>Last Name: <input type="text" name="lastName"></label><br><br>
+        <label>Email: <input type="text" name="email"></label><br><br>
 
         <button type="submit" name="registerbutton">Submit</button>
     </form>
 
-    <form name="Login" method="post" action="dbconnect.php">    
+    <form class="form-container" name="Login" method="post" action="dbconnect.php">
         <h3>Log In</h3>
-        <label>Username: <input type="text" name="username"><br></label><br>
-
-        <label>Password: <input type="text" name="password"><br></label><br>
-
+        
+        <label>Username: <input type="text" name="username"></label><br><br>
+        <label>Password: <input type="text" name="password"></label><br><br>
+        
         <button type="submit" name="loginbutton">Submit</button>
+    </form>
 </body>
 
 </html>
